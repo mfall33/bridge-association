@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: bridgeSegments
+instructions: null
+name: 'Bridge Segments'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - d4f0b259-8f40-41f3-9289-78e6476a6c79 # Bridge Segment
+  includeTableView: false
+  maxEntries: 4
+  minEntries: 4
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

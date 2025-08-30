@@ -1,0 +1,106 @@
+{% extends '_layouts/base.twig' %}
+
+
+{% block head %}
+	<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
+{% endblock %}
+
+{% block body %}
+
+	{% include '_components/video_landing.twig' with { src: '/assets/videos/placeholder-3.mov' } %}
+
+	<section
+		class="w-full flex flex-col justify-center items-center relative overflow-hidden p-8 md:p-16 min-h-screen sm:min-h-fit gap-y-16 md:gap-y-48">
+		{# Training at The Bridge #}
+		{% include '_components/sections/image_text_section.twig' with {
+            layout: 'img_right_text_left',
+            image_src: '/assets/images/quirky-emporium.png',
+            image_alt: 'Quirky Emporium',
+            title: 'Training at The Bridge',
+            text: 'Established in 1998, Bridge Association is a not-for-profit organisation providing vocational training for adults aged 18+ with learning disabilities. Based in a central, accessible location, we support trainees referred by Health and Social Care Trusts, SEN schools, and families. Our programme focuses on developing self-help, independent living, and practical, transferable skills, with trainees attending between 2–5 days a week. Over the years, Bridge has earned recognition for its impact, and continues to serve as a vital resource for connection, learning, and community across several Trust areas.',
+            image_aos_delay: '500',
+            text_aos_delay: '100',
+			extra_class: 'md:min-h-screen',
+        } %}
+
+		{# Opening hours and map #}
+		<div class="w-full flex flex-wrap md:flex-nowrap items-center justify-center relative overflow-hidden gap-y-16">
+			<div class="w-full flex flex-col md:flex-row justify-center">
+				<div class="gap-4 flex flex-col justify-center gap-8" data-aos="fade-right" data-aos-delay="100" data-aos-once="true">
+					<img src="/assets/images/quirky-emporium/quirky-emporium.svg" class="w-full max-w-[200px] mx-auto max-h-[450px] rounded-l-full" alt="Logo" width="80">
+					<h3 class="text-5xl text-[#3854CA] poppins-semibold text-center">Opening Times</h3>
+					
+					<div class="flex justify-center gap-8 open-sans-regular">
+						<div class="flex flex-col items-start">
+							<p class="flex justify-between w-full">
+								<b>MON:</b>
+								<span class="font-light ml-1">9 - 5:00PM</span>
+							</p>
+							<p class="flex justify-between w-full">
+								<b>TUE:</b>
+								<span class="font-light ml-1">9 - 5:00PM</span>
+							</p>
+							<p class="flex justify-between w-full">
+								<b>WED:</b>
+								<span class="font-light ml-1">9 - 5:00PM</span>
+							</p>
+							<p class="flex justify-between w-full">
+								<b>THU:</b>
+								<span class="font-light ml-1">9 - 5:00PM</span>
+							</p>
+							<p class="flex justify-between w-full">
+								<b>FRI:</b>
+								<span class="font-light ml-1">9 - 5:00PM</span>
+							</p>
+							<p class="flex justify-between w-full">
+								<b>SAT:</b>
+								<span class="font-light ml-1">9 - 5:30PM</span>
+							</p>
+							<p class="flex justify-between w-full">
+								<b>SUN:</b>
+								<span class="font-light ml-1">CLOSED</span>
+							</p>
+						</div>
+						<div class="flex-col justify-center items-center">
+							<img src="/assets/images/quirky-emporium/marker.svg" class="block mb-2 w-8 h-8"/>
+							<p class="open-sans-regular">
+								Castle Mall,<br>Market Square,<br>Antrim,<br>Northern Ireland,<br>BT41 4DN
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-full gap-4 flex flex-col items-center md:items-start w-[300px]" data-aos="fade-left" data-aos-delay="300" data-aos-once="true">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.9919656190687!2d-6.029954107774841!3d54.56889330219826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4861066098ac4325%3A0x6ad657a69fb1fe1f!2s33%20Colinbrook%20Dr%2C%20Dunmurry%2C%20Belfast%20BT17%200PG%2C%20UK!5e0!3m2!1sen!2sus!4v1748430186776!5m2!1sen!2sus" class="rounded-xl" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+
+		<div class="w-full flex flex-col justify-center relative overflow-hidden">
+			<div class="w-full max-w-[1400px] flex flex-col md:flex-row mx-auto">
+				<div class="gap-4 pt-8 flex flex-col items-center justify-center max-w-[1000px] mx-auto" data-aos="fade-right" data-aos-delay="100" data-aos-once="true">
+					<h3 class="text-5xl text-[#3854CA] poppins-semibold text-center">Buy a Brick, Build a Future</h3>
+					<p class="text-center open-sans-light">
+						Support the future of The Bridge Association by taking part in our Buy a Brick campaign. For a one-off donation, individuals, families, or businesses can purchase a personalised brick that will be placed within our new Training Unit. Each brick is a lasting symbol of your support and will help us fund the development of a modern, inclusive facility where adults with learning disabilities can access training, build confidence, and thrive. Whether you're donating in honour of someone special or simply want to be part of something meaningful, your brick will play a part in building brighter futures.</p>
+					<a class="block open-sans-regular" href="#about">
+						<button class="px-5 py-2 bg-[#3854CA] text-white w-auto rounded-lg text-center font-semibold lato-bold cursor-pointer active:scale-95 transition-all flex items-center justify-center hover:scale-95">
+							Buy Now
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<section class="w-full flex flex-col items-center justify-center relative overflow-hidden">
+			{% include '_components/sections/brick_images_section.twig' with {
+            image1_src: '/assets/images/Landscape.jpg',
+            image2_src: '/assets/images/Landscape.jpg',
+            image3_src: '/assets/images/Landscape.jpg',
+            aos_delay1: '300',
+            aos_delay2: '600',
+            aos_delay3: '900'
+        } %}
+		</section>
+
+	</section>
+
+
+{% endblock %}

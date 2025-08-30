@@ -1,0 +1,102 @@
+color: null
+fieldLayouts:
+  56f1aa4b-d01f-475c-ac73-746c6d61c023:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-08-09T18:54:06+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Title
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f2686e80-467e-4600-82dc-e21a0ce991f3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-09T18:56:03+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2425b6d7-525a-48e8-aaf3-e4c799c6721e # Summary
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cfd99380-255b-4a88-85c2-26b44ddea2b5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-09T19:06:36+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b5cc6221-471c-4d71-b0ec-3af30ddc5364 # Page
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5af2698-5d47-469c-80da-b5aa1b435b36
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-09T19:08:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 6d792fe4-471d-48ed-bc45-5fe112ba7e46 # Image
+            handle: null
+            includeInCards: false
+            instructions: 'Please use SVG images here'
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 779abfd6-007b-4b96-b8ae-17972285452b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0284c9cf-43d9-4e82-acd8-849216d3396d
+        userCondition: null
+handle: bridgeSegment
+hasTitleField: true
+icon: null
+name: 'Bridge Segment'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

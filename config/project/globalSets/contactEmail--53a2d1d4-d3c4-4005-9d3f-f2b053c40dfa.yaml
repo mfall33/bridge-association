@@ -1,0 +1,29 @@
+fieldLayouts:
+  4b65ea63-a48a-4c8b-985c-73e1c027cf7e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-10T20:43:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 111f4f1f-9016-491b-92cf-98f56f69170f # Contact Email
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e80bc827-cc28-4a0d-95be-ace5f5ab9fcd
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Contact Email'
+        uid: 71f101e6-af75-4e66-9a89-26e9aca7514b
+        userCondition: null
+handle: contactEmail
+name: 'Contact Email'
+sortOrder: 4

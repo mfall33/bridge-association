@@ -1,0 +1,14 @@
+{% macro trainingIcon(imageSrc, sectionId, delay, url) %}
+	<a href="{{ url }}">
+		<div class="rounded-full bg-[#3854CA] w-[50px] h-[50px] md:w-[100px] md:h-[100px] p-4 md:p-8 cursor-pointer transition-colors duration-300" data-aos="fade" data-aos-delay="{{ delay }}" data-aos-once="true" data-training-section-id="{{ sectionId }}">
+			<img src="{{ imageSrc }}" class="w-full">
+		</div>
+	</a>
+{% endmacro %}
+
+<div class="flex justify-around items-center w-full" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+	{{ _self.trainingIcon('/assets/images/training/mug.svg', 'section-left', 500, bridgeSectionSegments[0].page) }}
+	{{ _self.trainingIcon('/assets/images/training/education.svg', 'section-middle-left', 1000, bridgeSectionSegments[1].page) }}
+	{{ _self.trainingIcon('/assets/images/training/trolley.svg', 'section-middle-right', 1500, bridgeSectionSegments[2].page) }}
+	{{ _self.trainingIcon('/assets/images/training/mug.svg', 'section-right', 2000, bridgeSectionSegments[3].page) }}
+</div>

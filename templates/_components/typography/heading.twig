@@ -1,0 +1,17 @@
+{# components/header.twig #}
+
+{% set tag = tag ?? 'h1' %}
+
+{# Define variants for sizes and styles #}
+{% set variants = {
+  'small': 'text-lg font-medium',
+  'medium': 'text-2xl font-semibold',
+  'large': 'text-4xl font-bold'
+} %}
+
+{# Fallback to 'medium' if no valid variant is provided #}
+{% set variantClass = variants[variant] ?? variants['medium'] %}
+
+<{{tag}} class="{{ variantClass }} {{ class ?? '' }}">
+	{{ text }}
+</{{tag}}>

@@ -1,0 +1,241 @@
+{% extends '_layouts/base.twig' %}
+
+{% set image = entry.images.one() %}
+{% set images = entry.images.limit(3).all() %}
+{% set bridgeSection = entry.bridgeSection.one() %}
+
+{% set imageAndTextSection = entry.horizontalImageAndText.one() %}
+{% set imageAndTextSections = entry.horizontalImageAndText.all() %}
+
+{% set quoteSection = entry.quoteSection.one() %}
+
+{% set sponsorSection = entry.sponsorsSection.all() %}
+
+{% set videoSection = entry.videoSection.one() %}
+
+{% set bridgeSectionTitle = bridgeSection.title %}
+{% set bridgeSectionSegments = bridgeSection.bridgeSegments.all() %}
+
+{% block head %}
+	<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
+
+	<style>
+
+		p > strong {
+			color: blue;
+			font-weight: auto;
+		}
+	</style>
+
+{% endblock %}
+
+{% block body %}
+
+	<section class="w-full min-h-[80vh] flex justify-center relative">
+		<div class="absolute w-full h-full bg-[rgba(0,0,0,0.5)] z-1"></div>
+		<div class="swiper w-full h-full absolute z-0 inset-0 !absolute">
+			<div class="swiper-wrapper opacity-30">
+				{% for img in images %}
+					<div class="swiper-slide transform translate-z-0 bg-cover bg-center will-change-transform" style="background-image: url('{{ img.url }}');"></div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="w-full max-w-[1400px] px-8 flex justify-center flex-col relative z-10">
+			<h3 class="max-w-[1100px] text-black text-xl md:text-4xl text-black md:leading-14 poppins-medium" data-aos="fade" data-aos-duration="1200" data-aos-once="true">
+				{{ entry.slogan }}
+			</h3>
+			<div class="flex gap-4 translate-y-10 transition-all duration-1000">
+				<a class="block" href="#about">
+					<button class="px-5 py-2 bg-[#3854CA] text-white w-auto rounded-lg text-center font-semibold lato-bold cursor-pointer active:scale-95 transition-all flex items-center justify-center hover:scale-95">
+						About Us
+					</button>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section
+		class="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
+
+		{# {{ dump(bridgeSectionSegments[0].summary) }} #}
+		<div class="w-full flex flex-col gap-8 max-w-[1400px]">
+			<h3 class="text-center text-4xl font-bold poppins-bold mb-10 text-[#3854CA]" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">{{ bridgeSectionTitle }}</h3>
+
+			{% include '_components/ui/bridge_link_icons.twig' with { bridgeSectionSegments: bridgeSectionSegments } %}
+
+			<div class="flex items-center items-end w-full">
+				{% include '_components/svg/bridge_sections.twig' with { bridgeSectionSegments: bridgeSectionSegments } %}
+			</div>
+		</div>
+	</section>
+
+	<section class="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-[#3854CA] p-8 md:p-16 gap-8 md:gap-24">
+		{% for section in imageAndTextSections %}
+			<div class="w-full max-w-[1400px] flex flex-wrap gap-y-8">
+
+				{% if section.imagePlacement > 0 %}
+					{% include '_components/ui/rounded-image.twig' with { url: section.image.one().url, alt: 'Logo', class: 'w-full md:w-1/2' } %}
+				{% endif %}
+
+				<div class="w-full md:w-1/2 flex items-center" data-aos="fade-down" data-aos-once="true">
+					<div class="max-w-[500px] gap-4 flex flex-col justify-center">
+						<h3 class="text-5xl font-bold text-white poppins-semibold">{{ section.title }}</h3>
+						<h5 class="text-white text-xl font-medium mb-4 open-sans-regular">{{ section.subtitle }}</h5>
+						<p class="text-white open-sans-regular">{{ section.paragraph }}</p>
+					</div>
+				</div>
+
+				{% if section.imagePlacement <= 0 %}
+					{% include '_components/ui/rounded-image.twig' with { url: section.image.one().url, alt: 'Logo', class: 'w-full md:w-1/2' } %}
+				{% endif %}
+
+			</div>
+		{% endfor %}
+	</section>
+
+	{% set iframeUrl = videoSection.iframeUrl %}
+	{% set textBlocks = videoSection.textArray.all() %}
+
+	<section class="w-full min-h-screen flex items-center justify-center p-8 md:p-16">
+		<div class="w-full max-w-[1000px] flex flex-wrap gap-y-8">
+
+			{% if iframeUrl %}
+				<iframe class="w-full max-h-[300px] md:max-h-full" data-aos="fade" data-aos-once="true" width="900" height="500" src="{{ iframeUrl }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope: picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			{% endif %}
+
+			<div class="w-full">
+				<div class="flex flex-wrap justify-center w-full text-xl text-center poppins-semibold">
+					{% for textItem in textBlocks %}
+						{% set fullText = textItem.text | default(textItem) %}
+						{% if fullText|length > 0 %}
+							<span>
+								<span class="text-[#3854CA]">{{ fullText|slice(0, 1) }}</span>
+								{{ fullText|slice(1) }}
+							</span>
+							{% if not loop.last %}
+								<span>, &nbsp;</span>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="w-full min-h-screen flex items-center justify-center bg-[#3854CA] p-8">
+		<div class="max-w-[1000px]">
+			<p class="text-white text-lg md:text-2xl poppins-semibold">
+				<i>"{{ quoteSection.quote }}"</i>
+			</p>
+			<p class="mt-8 text-white text-md md:text-xl">-
+				{{ quoteSection.quoter }}n</p>
+		</div>
+	</section>
+
+	<section class="w-full min-h-screen gap-16 md:gap-32 p-8 md:p-16 flex flex-col items-center justify-center bg-[#3854CA]">
+
+		<div data-aos="fade-in" data-aos-once="true">
+			<h3 class="text-4xl font-bold text-white text-center mb-8 poppins-semibold">Sponsored By</h3>
+			<div class="max-w-[1000px] w-full grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+				{% for image in sponsorSection %}
+					<img class="w-full h-24 object-contain" src="{{ image.getUrl() }}" alt="{{ image.title|default('Sponsor logo') }}" data-aos="fade-in" data-aos-delay="{{ loop.index * 200 }}" data-aos-once="true"/>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<div class="w-full max-w-[1000px] flex flex-wrap md:flex-nowrap items-center justify-center gap-8" data-aos="fade-in" data-aos-once="true">
+			<div class="w-full md:w-1/2 flex flex-col gap-4">
+				<div class="gap-4 flex flex-col">
+
+					<h5 class="text-4xl font-semibold text-white poppins-semibold">Find Us:</h5>
+					<p class="text-lg font-semibold text-white open-sans-regular">{{ contactNumber.contactNumber }}</p>
+					<p class="text-lg font-semibold text-white open-sans-regular">{{ contactEmail.contactEmail }}</p>
+					<p class="text-lg text-white open-sans-regular">{{ address.address.one().title }},<br>
+						<br>{{ address.address.one().addressLine1 }},<br>
+						{{ address.address.one().addressLine2 }},<br>
+						{{ address.address.one().locality }},<br>
+						{{ address.address.one().postalCode }}</p>
+					<div class="flex gap-8 mt-4">
+						{# {{ dump() }} #}
+						{% for link in socialLinks.socialContent.all() %}
+							{% set socialLink = link.socialLink %}
+							{% set socialIcon = link.socialIcon.one() %}
+
+							{% if socialLink and socialIcon %}
+								<a href="{{ socialLink }}" target="_blank">
+									<img class="w-[50px]" src="{{ socialIcon.url }}" alt="{{ link.title|default('Social icon') }}"/>
+								</a>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="w-full md:w-1/2">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.9919656190687!2d-6.029954107774841!3d54.56889330219826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4861066098ac4325%3A0x6ad657a69fb1fe1f!2s33%20Colinbrook%20Dr%2C%20Dunmurry%2C%20Belfast%20BT17%200PG%2C%20UK!5e0!3m2!1sen!2sus!4v1748430186776!5m2!1sen!2sus" class="w-full rounded" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+AOS.init();
+
+const swiper = new Swiper(".swiper", {
+effect: "fade",
+loop: true,
+speed: 1200,
+autoplay: {
+delay: 4000,
+disableOnInteraction: false
+},
+fadeEffect: {
+crossFade: true
+}
+});
+
+const bridgeSections = document.querySelectorAll('.bridge-section');
+const trainingIcons = document.querySelectorAll('[data-training-section-id]');
+
+function activateElements(sectionId) {
+const targetBridgeSection = document.querySelector (`.bridge-section[data-section-id="${sectionId}"]`);
+if (targetBridgeSection) {
+targetBridgeSection.classList.add('fill-black');
+}
+
+const targetTrainingIcon = document.querySelector (`[data-training-section-id="${sectionId}"]`);
+if (targetTrainingIcon) {
+targetTrainingIcon.classList.add('bg-black');
+}
+}
+
+function deactivateElements(sectionId) {
+const targetBridgeSection = document.querySelector (`.bridge-section[data-section-id="${sectionId}"]`);
+if (targetBridgeSection) {
+targetBridgeSection.classList.remove('fill-black');
+}
+
+const targetTrainingIcon = document.querySelector (`[data-training-section-id="${sectionId}"]`);
+if (targetTrainingIcon) {
+targetTrainingIcon.classList.remove('bg-black');
+}
+}
+
+bridgeSections.forEach(section => {
+const sectionId = section.dataset.sectionId;
+section.addEventListener('mouseenter', () => activateElements(sectionId));
+section.addEventListener('mouseleave', () => deactivateElements(sectionId));
+});
+
+trainingIcons.forEach(icon => {
+const sectionId = icon.dataset.trainingSectionId;
+icon.addEventListener('mouseenter', () => activateElements(sectionId));
+icon.addEventListener('mouseleave', () => deactivateElements(sectionId));
+});
+});
+	</script>
+{% endblock %}

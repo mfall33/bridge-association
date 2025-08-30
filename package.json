@@ -1,5 +1,5 @@
 {
-  "name": "craft-cms",
+  "name": "bridge-association",
   "private": true,
   "version": "5.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.6",
-    "alpinejs": "^3.13.8",
     "rollup-plugin-copy": "^3.5.0",
     "sharp": "^0.33.3",
     "svgo": "^3.2.0",
@@ -20,15 +19,6 @@
     "vite-plugin-image-optimizer": "^1.1.7",
     "vite-plugin-restart": "^0.4.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/madebyshape/craft-cms.git"
-  },
-  "author": "Jason Mayo (@bymayo)",
-  "authorUrl": "https://madebyshape.co.uk",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/madebyshape/craft-cms/issues"
-  },
-  "homepage": "https://github.com/madebyshape/craft-cms#readme"
+  "dependencies": {}
 }

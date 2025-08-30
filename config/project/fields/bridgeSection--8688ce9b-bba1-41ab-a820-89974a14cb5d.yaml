@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: bridgeSection
+instructions: null
+name: 'Bridge Section'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 19a41df1-af8c-4978-9247-b64c01c56535 # Section Title & Bridge Segments
+  includeTableView: false
+  maxEntries: 1
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

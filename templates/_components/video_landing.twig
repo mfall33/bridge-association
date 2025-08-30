@@ -1,0 +1,84 @@
+<section class="w-full h-screen flex justify-center relative overflow-hidden">
+
+    <div id="video-overlay" class="absolute cursor-pointer w-full h-full bg-[rgba(0,0,0,0.3)] z-1"></div>
+
+    <video id="video" class="w-full object-fill" height="240" autoplay muted playsinline>
+        <source src="{{ src }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="play-btn" class="z-[2] flex items-center justify-center absolute rounded-full max-w-[120px] max-h-[120px] top-0 bottom-0 left-0 right-0 m-auto cursor-pointer hover:bg-[rgba(56,84,203)] transition-colors transition-transform duration-500 active:scale-95" style="opacity: 0; pointer-events: none; display: none;" data-aos="fade-in" data-aos-delay="300" data-aos-once="true">
+        {% include '_components/svg/play' with { id: id|default('playBtn') } %}
+    </div>
+
+    {# <div id="video-overlay" class="absolute inset-0 cursor-pointer"></div> #}
+
+
+    <script>
+    const playBtn = document.getElementById('play-btn');
+    const video = document.getElementById('video');
+    const videoOverlay = document.getElementById('video-overlay');
+
+    // Initial state: play button hidden
+    playBtn.style.opacity = '0';
+    playBtn.style.pointerEvents = 'none';
+    playBtn.style.display = 'none'; // Ensure it's hidden from the start
+
+    // Ensure the overlay is visible initially for pausing
+    {# videoOverlay.classList.remove('hidden'); #}
+
+    // Function to show the play button
+    function showPlayButton() {
+        playBtn.style.opacity = '1';
+        playBtn.style.pointerEvents = 'auto';
+        playBtn.style.display = 'flex'; // Make it visible
+    }
+
+    // Function to hide the play button
+    function hidePlayButton() {
+        playBtn.style.opacity = '0';
+        playBtn.style.pointerEvents = 'none';
+        // Use a timeout to ensure transition finishes before display: none
+        setTimeout(() => {
+            playBtn.style.display = 'none';
+        }, 500); // Matches your transition-transform duration-500
+    }
+
+    // Autoplay the video on load
+    video.play().catch(error => {
+        // Autoplay might be blocked, show play button in that case
+        console.warn('Autoplay prevented:', error);
+        showPlayButton();
+    });
+
+    // Event listener for clicking the play button
+    playBtn.addEventListener('click', () => {
+        if (video.paused || video.ended) {
+            video.play();
+            hidePlayButton();
+        }
+    });
+
+    // Event listener for when the video is paused
+    video.addEventListener('pause', () => {
+        showPlayButton();
+    });
+
+    // Event listener for when the video has ended
+    video.addEventListener('ended', () => {
+        showPlayButton();
+    });
+
+    // Event listener for clicking the video overlay (to pause)
+    videoOverlay.addEventListener('click', () => {
+        if (!video.paused) {
+            video.pause();
+        } else {
+            video.play();
+            hidePlayButton();
+        }
+    });
+
+    </script>
+
+</section>

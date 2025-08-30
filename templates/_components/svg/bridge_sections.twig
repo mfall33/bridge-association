@@ -1,0 +1,50 @@
+{% macro bridgeSection(pathData, sectionId, headingContent, headingX, headingY, subTextContent, subTextWidth, subTextX, subTextY, aosDelay, url ) %}
+	<a href="{{ url }}">
+		<g class="bridge-section-group" data-aos="fade" data-aos-delay="{{ aosDelay }}" data-aos-duration="1000" data-aos-once="true">
+			<path d="{{ pathData }}" class="bridge-section fill-[#3854CB] hover:fill-black transition-colors duration-300 cursor-pointer" data-section-id="{{ sectionId }}"></path>
+
+			<text x="{{ headingX }}" y="{{ headingY }}" class="bridge-text bridge-heading text-xl fill-white font-semibold pointer-events-none transition-colors duration-300 poppins-regular" data-section-id="{{ sectionId }}" text-anchor="middle" dominant-baseline="middle">
+				{{ headingContent }}
+			</text>
+
+			{% if subTextContent is not empty %}
+				<foreignObject x="{{ subTextX }}" y="{{ subTextY }}" width="{{ subTextWidth }}" height="100" class="pointer-events-none">
+					<div xmlns="http://www.w3.org/1999/xhtml" class="bridge-subtext-container" style="
+							                        width: 100%;
+							                        height: 100%;
+							                        display: flex;
+							                        align-items: flex-start;
+							                        justify-content: center;
+							                        box-sizing: border-box;
+							                     ">
+						<p class="bridge-subtext-html text-sm text-center font-normal text-white open-sans-regular" data-section-id="{{ sectionId }}">
+							{{ subTextContent }}
+						</p>
+					</div>
+				</foreignObject>
+			{% endif %}
+		</g>
+	</a>
+{% endmacro %}
+
+<svg viewbox="0 0 1494 471" fill="none" xmlns="http://www.w3.org/2000/svg">
+	{{ _self.bridgeSection(
+        "M356 62L355.718 171.63C331.458 175.701 308.77 186.092 293.044 203.069C285.637 211.062 275.692 224.937 270.79 247.37C270.46 248.923 270.297 250.505 270.302 252.092V471H134.067C127.713 471 121.619 468.52 117.127 464.105C112.634 459.69 110.11 453.702 110.11 447.458V298.631C110.12 296.096 109.709 293.577 108.895 291.171C103.538 275.516 79.8197 217.253 21.0503 210.177C15.2638 209.489 9.93188 206.749 6.0559 202.471C2.17993 198.193 0.0264963 192.672 0 186.944L0 137.868C0.00230514 132.263 2.03943 126.843 5.74505 122.583C9.45066 118.322 14.5816 115.5 20.2152 114.625L356 62Z",
+        "section-left", bridgeSectionSegments[0].title, 170, 140, "Vocational training for adults with learning disabilities in a supportive setting.", 150, 100, 180, 500, bridgeSectionSegments[0].page
+    ) }}
+
+	{{ _self.bridgeSection(
+        "M747 0.0677779L746.766 107.648C745.955 107.648 745.379 107.648 745.06 107.648C726.252 108.205 707.886 113.49 691.658 123.016C651.977 146.232 638.149 188.43 638.149 199.915V447.443C638.149 453.687 635.671 459.675 631.259 464.093C626.847 468.51 620.862 470.994 614.62 471H505.609C499.363 471 493.373 468.518 488.956 464.1C484.539 459.682 482.058 453.69 482.058 447.443V243.564C482.059 241.82 481.866 240.082 481.482 238.381C478.818 225.994 473.306 214.398 465.384 204.512C442.004 175.953 396.747 164.467 356 171.453L356.235 61.7497L741.478 0.302392C743.303 0.00573084 745.156 -0.0730266 747 0.0677779Z",
+        "section-middle-left", bridgeSectionSegments[1].title, 555, 140, "Supporting connection, inclusion, and wellbeing across the Antrim community.",140, 490, 180, 1000, bridgeSectionSegments[1].page
+    ) }}
+
+	{{ _self.bridgeSection(
+        "M1138 58.6497L1137.77 162.703C1118.4 161.199 1094.51 163.225 1071.79 175.725C1038.32 194.166 1017.83 223.933 1016.4 248.133C1013.13 303.647 1014.78 401.717 1015.8 446.939C1015.87 450.031 1015.32 453.107 1014.17 455.99C1013.02 458.874 1011.3 461.508 1009.12 463.742C1006.93 465.977 1004.31 467.768 1001.41 469.013C998.512 470.258 995.391 470.934 992.226 471H879.043C872.687 471 866.587 468.547 862.072 464.175C857.556 459.803 854.991 453.865 854.933 447.653L852.75 202.048C852.75 201.289 852.707 200.53 852.619 199.776C850.628 181.478 843.71 164.024 832.569 149.189C803.472 110.996 757.26 107.871 747 107.594L747.24 0C747.84 0.0533276 748.441 0.117334 749.041 0.213323L1138 58.6497Z",
+        "section-middle-right", bridgeSectionSegments[2].title, 950, 140, "A unique retail space showcasing handcrafted goods and upcycled treasures.",150, 860, 180, 1500, bridgeSectionSegments[2].page
+    ) }}
+
+	{{ _self.bridgeSection(
+        "M1493.73 134.013L1493.63 194.9C1493.61 200.11 1491.84 205.165 1488.6 209.268C1485.35 213.371 1480.83 216.288 1475.73 217.561C1445.96 225.027 1389.37 246.582 1388.22 302.628C1387.15 354.745 1387.41 413.472 1387.67 445.324C1387.7 448.394 1387.11 451.44 1385.95 454.286C1384.79 457.132 1383.07 459.724 1380.9 461.913C1378.72 464.102 1376.13 465.845 1373.28 467.044C1370.43 468.242 1367.36 468.871 1364.26 468.896L1253.37 468.703C1247.13 468.692 1241.16 466.241 1236.74 461.883C1232.33 457.525 1229.83 451.614 1229.79 445.44C1229.42 376.802 1229.05 308.156 1228.67 239.504C1228.66 237.931 1228.49 236.362 1228.16 234.823C1225.63 222.695 1220.48 211.251 1213.07 201.272C1204.54 189.99 1194.77 183.059 1188.68 178.823C1184.51 175.917 1180.16 173.274 1175.66 170.911C1174.49 170.301 1173.28 169.789 1172.03 169.38C1160.77 165.729 1149.12 163.684 1137.32 162.701L1137.5 58.7L1473.74 110.895C1479.31 111.745 1484.39 114.544 1488.06 118.785C1491.73 123.027 1493.74 128.429 1493.73 134.013Z",
+        "section-right", bridgeSectionSegments[3].title, 1310, 140, "A community café empowering adults with learning disabilities.",150, 1240, 180, 2000, bridgeSectionSegments[3].page
+    ) }}
+</svg>

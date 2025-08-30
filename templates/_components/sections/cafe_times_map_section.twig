@@ -1,0 +1,58 @@
+{# templates/_components/sections/cafe_times_map_section.twig #}
+{#
+    Variables:
+    - logo_src: Path to the Quirky Emporium logo (for opening times visual).
+    - logo_alt: Alt text for the Quirky Emporium logo.
+    - marker_src: Path to the map marker icon.
+    - map_iframe_src: URL for the iframe map.
+    - aos_delay_left_block: AOS delay for the left (times/address) block.
+    - aos_delay_right_block: AOS delay for the right (map) block.
+#}
+<div class="w-full max-w-[1400px] flex flex-col md:flex-row items-center justify-center pt-8 mx-auto">
+    <div class="sm:w-full md:w-1/2 gap-8 pl-0 md:pl-16 flex flex-col justify-center" data-aos="fade-left" data-aos-delay="{{ aos_delay_left_block }}" data-aos-once="true">
+        <div class="gap-8 flex flex-col justify-center open-sans-regular">
+            {% include '_components/typography/section-title.twig' with { title: 'Opening Times', class: 'md:text-center' } %}
+            <div class="flex flex-col sm:flex-row justify-start md:justify-center gap-8"> {# Adjusted for responsive alignment #}
+                <div class="flex flex-col items-start mx-auto sm:mx-0"> {# Center on mobile, left on larger #}
+                    <p class="flex justify-between w-full">
+                        <b>MON:</b>
+                        <span class="font-light ml-1">9 - 5:00PM</span>
+                    </p>
+                    <p class="flex justify-between w-full">
+                        <b>TUE:</b>
+                        <span class="font-light ml-1">9 - 5:00PM</span>
+                    </p>
+                    <p class="flex justify-between w-full">
+                        <b>WED:</b>
+                        <span class="font-light ml-1">9 - 5:00PM</span>
+                    </p>
+                    <p class="flex justify-between w-full">
+                        <b>THU:</b>
+                        <span class="font-light ml-1">9 - 5:00PM</span>
+                    </p>
+                    <p class="flex justify-between w-full">
+                        <b>FRI:</b>
+                        <span class="font-light ml-1">9 - 5:00PM</span>
+                    </p>
+                    <p class="flex justify-between w-full">
+                        <b>SAT:</b>
+                        <span class="font-light ml-1">9 - 5:30PM</span>
+                    </p>
+                    <p class="flex justify-between w-full">
+                        <b>SUN:</b>
+                        <span class="font-light ml-1">CLOSED</span>
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center sm:items-start text-center sm:text-left"> {# Center on mobile, left on larger #}
+                    <img src="{{ marker_src }}" class="block mb-2 w-8 h-8" alt="Map marker icon"/>
+                    <p class="font-bold open-sans-bold">
+                        Castle Mall,<br>Market Square,<br>Antrim,<br>Northern Ireland,<br>BT41 4DN
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sm:w-full md:w-1/2 gap-4 flex flex-col items-center justify-center mt-8 md:mt-0 px-4 sm:px-8 md:pl-0 md:pr-16" data-aos="fade-right" data-aos-delay="{{ aos_delay_right_block }}" data-aos-once="true"> {# Responsive padding #}
+        <iframe src="{{ map_iframe_src }}" class="rounded-4xl w-full max-w-[550px] h-[350px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>

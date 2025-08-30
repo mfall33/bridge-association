@@ -1,0 +1,19 @@
+{% set image_on_left = (layout == 'img_left_text_right') %}
+
+<div class="justify-center items-center w-full max-w-[1600px] flex gap-8 md:gap-16 {{ image_on_left ? 'flex-col' : 'flex-col-reverse' }} md:flex-row items-center justify-center {{ extra_class is defined ? extra_class : '' }}">
+    {% if image_on_left %}
+        {# Image on Left, Text on Right #}
+        {% include '_components/ui/rounded-image.twig' with { url: image_src, alt: 'Logo', class: 'w-auto' } %}
+        <div class="gap-4 md:gap-8 flex flex-col justify-center max-w-[650px]" data-aos="fade-in" data-aos-delay="{{ text_aos_delay }}" data-aos-once="true" data-aos-duration="1000">
+            {% include '_components/typography/section-title.twig' with { title: title } %}
+            <p class="open-sans-regular">{{ text }}</p>
+        </div>
+    {% else %}
+        {# Image on Right, Text on Left #}
+        <div class="gap-4 md:gap-8 flex flex-col justify-center max-w-[650px]" data-aos="fade-in" data-aos-delay="{{ text_aos_delay }}" data-aos-once="true" data-aos-duration="1000">
+            {% include '_components/typography/section-title.twig' with { title: title } %}
+            <p class="open-sans-regular">{{ text }}</p>
+        </div>
+        {% include '_components/ui/rounded-image.twig' with { url: image_src, alt: 'Logo', class: 'w-auto' } %}
+    {% endif %}
+</div>

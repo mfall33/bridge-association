@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 2e3676cf-7394-40ab-a6a5-c1504ad79b3a # Page
+handle: hugamug
+maxAuthors: 1
+name: 'Hug a Mug'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  08c386f4-5a41-4c9f-8282-f6785af06bfc: # bridge-association
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/hug-a-mug/index.twig
+    uriFormat: hug-a-mug
+type: single

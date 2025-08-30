@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: horizontalImageAndText
+instructions: null
+name: 'Horizontal Image and Text'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 56cfd589-eea7-4bc3-bc19-14038349a3c2 # Image and Text Section
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

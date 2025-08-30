@@ -1,0 +1,29 @@
+fieldLayouts:
+  8c48f5d1-6d33-44e1-9caa-95f3729f9284:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-10T20:42:34+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 77111d2d-eb09-4957-9930-0c2bfd3d95e0 # Contact Number
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e7511474-748c-45b2-befc-4776f2e71922
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Contact Number'
+        uid: bc5d3273-9cab-4d64-902e-53797dffa64c
+        userCondition: null
+handle: contactNumber
+name: 'Contact Number'
+sortOrder: 3

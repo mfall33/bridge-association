@@ -1,1 +1,40 @@
-&copy; {{ now|date('Y') }} {{ siteName }}. All rights reserved.
+	<section class="w-full min-h-screen gap-16 md:gap-32 p-8 md:p-16 flex flex-col items-center justify-center bg-[#3854CA]">
+
+		<div data-aos="fade-in" data-aos-once="true">
+			<h3 class="text-4xl font-bold text-white text-center mb-8 poppins-semibold">Sponsored By</h3>
+			<div class="max-w-[1000px] w-full grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+				{% for image in sponsorSection %}
+					<img class="w-full h-24 object-contain" src="{{ image.getUrl() }}" alt="{{ image.title|default('Sponsor logo') }}" data-aos="fade-in" data-aos-delay="{{ loop.index * 200 }}" data-aos-once="true"/>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="w-full max-w-[1000px] flex flex-wrap md:flex-nowrap items-center justify-center gap-8" data-aos="fade-in" data-aos-once="true">
+			<div class="w-full md:w-1/2 flex flex-col gap-4">
+				<div class="gap-4 flex flex-col">
+					<h5 class="text-4xl font-semibold text-white poppins-semibold">Find Us:</h5>
+					<p class="text-lg font-semibold text-white open-sans-regular">02894468435</p>
+					<p class="text-lg font-semibold text-white open-sans-regular">bridgetrainingunit@gmail.com</p>
+					<p class="text-lg text-white open-sans-regular">Unit 41 Antrim Business Park,
+						<br>Enkalon Industrial Estate,<br>
+						25 Randalstown Road,<br>
+						Antrim,<br>
+						BT41 4LD</p>
+					<div class="flex gap-8 mt-4">
+						<a href="/">
+							<img class="w-[50px]" src="/assets/images/socials/facebook.svg"/>
+						</a>
+						<a href="/">
+							<img class="w-[50px]" src="/assets/images/socials/instagram.svg"/>
+						</a>
+						<a href="/">
+							<img class="w-[50px]" src="/assets/images/socials/x.svg"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="w-full md:w-1/2">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.9919656190687!2d-6.029954107774841!3d54.56889330219826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4861066098ac4325%3A0x6ad657a69fb1fe1f!2s33%20Colinbrook%20Dr%2C%20Dunmurry%2C%20Belfast%20BT17%200PG%2C%20UK!5e0!3m2!1sen!2sus!4v1748430186776!5m2!1sen!2sus" class="w-full rounded" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</section>

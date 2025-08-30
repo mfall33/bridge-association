@@ -1,0 +1,72 @@
+color: null
+fieldLayouts:
+  bd30ca96-04ea-4d21-9181-102c30471f36:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-10T20:36:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 6471f106-123c-4b33-a20b-69e939beb932 # Social Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 23ef32ee-6990-467e-a193-2d59a689f815
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-10T20:36:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 6d792fe4-471d-48ed-bc45-5fe112ba7e46 # Image
+            handle: socialIcon
+            includeInCards: false
+            instructions: null
+            label: 'Social Icon'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 71422a50-2aa6-412a-b0cd-7ad40b0118b1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-10T20:36:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f3e544b8-88bf-4761-8df2-d767fa1502b7 # Text
+            handle: socialName
+            includeInCards: false
+            instructions: null
+            label: 'Social Name'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83ca3476-b59c-4846-9638-99bc41be711f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a8602a47-a740-4594-b4bc-51a203cb432a
+        userCondition: null
+handle: social
+hasTitleField: false
+icon: null
+name: Social
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

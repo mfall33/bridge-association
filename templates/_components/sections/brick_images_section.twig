@@ -1,0 +1,15 @@
+{# templates/_components/sections/brick_images_section.twig #}
+{#
+    Variables:
+    - image1_src: Path to the first brick image.
+    - image2_src: Path to the second brick image.
+    - image3_src: Path to the third brick image.
+    - aos_delay1: AOS delay for the first image.
+    - aos_delay2: AOS delay for the second image.
+    - aos_delay3: AOS delay for the third image.
+#}
+<div class="w-full max-w-[1400px] flex flex-col items-center justify-center md:flex-row gap-8 sm:gap-16 md:gap-32 px-4 mx-auto"> {# Added mx-auto for centering #}
+    <img src="{{ image1_src }}" data-aos="fade" data-aos-delay="{{ aos_delay1 }}" data-aos-once="true" class="w-full max-w-[300px] h-[300px] rounded-full cursor-pointer" alt="Decorative brick example 1">
+    <img src="{{ image2_src }}" data-aos="fade" data-aos-delay="{{ aos_delay2 }}" data-aos-once="true" class="w-full max-w-[300px] h-[300px] rounded-full cursor-pointer" alt="Decorative brick example 2">
+    <img src="{{ image3_src }}" data-aos="fade" data-aos-delay="{{ aos_delay3 }}" data-aos-once="true" class="w-full max-w-[300px] h-[300px] rounded-full cursor-pointer" alt="Decorative brick example 3">
+</div>

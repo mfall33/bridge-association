@@ -1,0 +1,14 @@
+<div class="w-full flex flex-col gap-8 max-w-[1400px]">
+	<h3 class="text-center text-4xl font-bold poppins-bold mb-10 text-[#3854CA]" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">{{ bridgeSectionTitle }}</h3>
+
+	<div class="flex justify-around items-center w-full" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+		{{ _self.trainingIcon('/assets/images/training/mug.svg', 'section-left', 500) }}
+		{{ _self.trainingIcon('/assets/images/training/education.svg', 'section-middle-left', 1000) }}
+		{{ _self.trainingIcon('/assets/images/training/trolley.svg', 'section-middle-right', 1500) }}
+		{{ _self.trainingIcon('/assets/images/training/mug.svg', 'section-right', 2000) }}
+	</div>
+
+	<div class="flex items-center items-end w-full">
+		{% include '_components/svg/bridge.twig' %}
+	</div>
+</div>

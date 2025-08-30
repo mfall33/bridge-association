@@ -1,0 +1,170 @@
+color: null
+fieldLayouts:
+  5decf72b-6a9a-477f-82d9-91da322742e3:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-28T17:38:11+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7d0ef38c-0d14-4bbd-bb65-79d20f56a37b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-29T12:08:43+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5cbe08b7-b4bd-4a6b-be41-de9647b5eb19 # Images
+            handle: null
+            includeInCards: false
+            instructions: 'Image to be displayed in the first section of the homepage.'
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a3b6ef3-7f18-4fff-8088-3bcefb301300
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-06-05T19:11:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7f0dd947-99d8-4456-93f3-4ce4f6162a3f # Rich Text - Simple
+            handle: slogan
+            includeInCards: false
+            instructions: 'Slogan to be displayed in the first section of the homepage.'
+            label: Slogan
+            providesThumbs: false
+            required: false
+            tip: 'Bolded text will display as blue'
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1debf461-9466-42ce-9a0b-c217ac2bffff
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-09T18:32:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 8688ce9b-bba1-41ab-a820-89974a14cb5d # Bridge Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 82310610-b9ad-48c7-b48e-94efea3e005e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-09T19:40:39+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 21ae5ec3-ab6e-4d85-8720-fb22957a84ef # Horizontal Image and Text
+            handle: null
+            includeInCards: false
+            instructions: 'Use the image placement switch button to toggle image placement from right to left'
+            label: 'Image and Text Section(s)'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5af42ba0-4e13-46a7-bbce-be1dc743fdc4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-10T15:17:05+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2f9a47e6-406d-40df-bc4c-79b4c88b70eb # Quote Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f674e603-b936-4ca6-8371-aaf7fd37d795
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-10T15:29:38+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5cbe08b7-b4bd-4a6b-be41-de9647b5eb19 # Images
+            handle: sponsorsSection
+            includeInCards: false
+            instructions: 'List of Sponsor Logos'
+            label: 'Sponsors Section'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 114d9d92-6933-4582-8c8b-8fef702bde1a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-10T19:24:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b81ebc1a-eb6c-4822-9a3d-3103de89b902 # Video Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8fe8e9b-ac30-40a4-afa6-c32c5c71b9ef
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b2bd3713-3369-46db-bf99-cd7dc824d872
+        userCondition: null
+handle: homepage
+hasTitleField: true
+icon: null
+name: HomePage
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

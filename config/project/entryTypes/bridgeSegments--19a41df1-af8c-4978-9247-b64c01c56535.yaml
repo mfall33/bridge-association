@@ -1,0 +1,68 @@
+color: null
+fieldLayouts:
+  6338e6f9-1180-4355-9f16-e51e8cf63cd9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-08-09T18:59:27+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 85d7653e-cab6-46d0-81b3-90ca4f6ff03a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-08-09T18:56:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: cbfce732-a7d7-4aa4-ae48-c841b8fae9fd # Bridge Segments
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 657cd4be-0278-44aa-810e-ac2db3644388
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9bc3b6ef-ce30-4e08-aaff-dd3d4fff58fe
+        userCondition: null
+handle: bridgeSegments
+hasTitleField: true
+icon: null
+name: 'Section Title & Bridge Segments'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

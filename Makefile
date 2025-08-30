@@ -37,8 +37,6 @@ install:
 	ddev exec php craft plugin/install vite
 	ddev exec php craft plugin/install blitz
 	ddev exec php craft plugin/install sprig
-	ddev exec php craft plugin/install formie
-	ddev exec php craft plugin/install imager-x
 	ddev exec php craft plugin/install minify
 	ddev exec php craft plugin/install ckeditor
 	ddev exec php craft plugin/install mailgun

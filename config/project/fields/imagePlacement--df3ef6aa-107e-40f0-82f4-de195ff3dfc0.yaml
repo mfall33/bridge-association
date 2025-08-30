@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: imagePlacement
+instructions: 'How the section should be displayed. Image left and text right or Image right and text left.'
+name: 'Image Placement'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Image Left - Content Right'
+  onLabel: 'Image Right - Content Left'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

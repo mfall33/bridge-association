@@ -1,0 +1,40 @@
+{% extends '_layouts/base.twig' %}
+{% set image = entry.images.one() %}
+{% set fullTitle = entry.title ~ ' - ' ~ entry.postDate|date('F j, Y') %}
+{% block body %}
+
+	<section class="w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden p-8 md:p-16">
+
+		<div id="video-overlay" class="absolute cursor-pointer w-full h-full bg-[rgba(0,0,0,0.1)] z-0"></div>
+
+		<div class="w-full lex flex-col items-center justify-center max-w-[1000px]">
+
+			{% if image %}
+				<img src="{{ image.getUrl() }}" class="w-full block rounded" alt="Blog"/>
+			{% endif %}
+
+			<div class="gap-4 flex flex-col mt-4 md:mt-8">
+				{% include '_components/typography/section-title.twig' with { title: fullTitle, class: 'md:text-center' } %}
+				<p class="open-sans-regular md:text-center font-light">
+					<b>Posted By:</b>
+					<i>{{ entry.author }}</i>
+				</p>
+				{% if entry.dateUpdated > entry.postDate %}
+					<p class="open-sans-regular md:text-center font-light">
+						<b>Last Updated:</b>
+						<i>{{ entry.dateUpdated|date('F j, Y') }}</i>
+					</p>
+				{% endif %}
+
+				<p class="open-sans-regular text-center">{{ entry.richTextSimple }}</p>
+				<a href="/blog" class="inline-block">
+					<button class="px-5 py-2 bg-blue-700 text-white border border-blue-800 rounded-lg font-semibold lato-bold cursor-pointer active:scale-95 transition-all flex items-center hover:scale-95">
+						<i class="bi bi-arrow-left-circle-fill mr-3 text-2xl"></i>
+						Back to blogs
+					</button>
+				</a>
+			</div>
+
+		</div>
+	</section>
+{% endblock %}

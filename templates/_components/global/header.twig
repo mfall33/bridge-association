@@ -1,0 +1,83 @@
+{% set currentSegment = craft.app.request.getSegment(1) %}
+
+{% set navItems = [
+    { name: 'Training', slug: 'training', path: '/training' },
+    { name: 'Community', slug: 'community', path: '/community' },
+    { name: 'Quirky Emporium', slug: 'quirky-emporium', path: '/quirky-emporium' },
+    { name: 'Hug a Mug', slug: 'hug-a-mug', path: '/hug-a-mug' },
+    { name: 'Blog', slug: '/blog', path: '/blog' },
+] %}
+
+{% set fixed = fixed is defined ? fixed : true %}
+
+<header class="{{ fixed ? 'absolute' : '' }} w-full bg-[rgba(255,255,255,0.05)] top-0 z-[9999] overflow-hidden transition-all duration-500 bg-transparent">
+	<nav class="pt-8 px-10 pb-6 relative">
+		<div
+			class="flex items-center justify-between max-w-[1400px] mx-auto md:px-8">
+			{# Logo #}
+			<div data-aos="fade-in">
+				<a class="relative group transition-all lato-regular" href="/">
+					<img src="/assets/images/bridge_association_logo.svg" alt="Bridge Association Logo" width="80">
+				</a>
+			</div>
+
+			{# Desktop Navigation #}
+			<ul class="hidden md:flex gap-8">
+				{% for item in navItems %}
+					{% set slugInUrlSegment = currentSegment in item.slug %}
+					<li data-aos="fade-in" data-aos-delay="{{ loop.index * 200 }}" data-aos-duration="600">
+						<a class="relative text-xl group transition-all lato-bold {{ slugInUrlSegment ? 'text-[#3854CA]' : 'text-white' }} hover:text-[#3854CA]" href="{{ siteUrl(item.path) }}">
+							{{ item.name }}
+							<div class="absolute -bottom-1 left-0 h-[2px] bg-[#3854CA] opacity-0 {{ slugInUrlSegment ? 'opacity-100' : '' }} group-hover:opacity-100 transition-opacity duration-500 ease-in-out w-full"></div>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+			{# Mobile Burger Menu Button #}
+			<button id="burger-button" class="md:hidden text-white focus:outline-none z-50 cursor-pointer">
+				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+				</svg>
+			</button>
+		</div>
+
+	</nav>
+
+	{# Mobile Menu Overlay (Initially hidden, slides in) #}
+	<div id="mobile-menu" class="w-full fixed inset-0 bg-white left-[100%] overflow-hidden transition-right duration-300 ease-in-out z-[9998] flex flex-col items-center justify-center">
+		<button
+			id="close-button" class="absolute top-8 right-10 text-[#3854CA] focus:outline-none cursor-pointer">
+			{# Close Button #}
+			<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
+		<ul class="flex flex-col gap-8 text-center text-2xl text-[#3854CA] poppins-semibold">
+			{% for item in navItems %}
+				{% set slugInUrlSegment = currentSegment in item.slug %}
+				<li>
+					<a href="{{ siteUrl(item.path) }}" class="block py-2 {{ slugInUrlSegment ? 'text-[#3854CA]' : 'text-black' }} hover:text-[#3854CA] transition-colors">{{ item.name }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</header>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+const burgerButton = document.getElementById('burger-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeButton = document.getElementById('close-button');
+
+burgerButton.addEventListener('click', function () {
+console.log('Mobile menu opened');
+mobileMenu.classList.remove('left-[100%]');
+});
+
+closeButton.addEventListener('click', function () {
+console.log('Mobile menu closed');
+mobileMenu.classList.add('left-[100%]');
+});
+});
+</script>

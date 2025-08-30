@@ -1,0 +1,29 @@
+fieldLayouts:
+  84f50bd6-3096-423a-94ac-ec10f2f41fea:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-08-10T20:41:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: c99e9b57-2927-493f-8af6-d09f03e6e2e2 # Address
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 675fdb1e-db58-4fa6-b625-7cb239cc9a6b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Address
+        uid: a130e85c-4efd-4446-9d3f-ccc575f8b809
+        userCondition: null
+handle: address
+name: Address
+sortOrder: 2

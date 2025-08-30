@@ -1,0 +1,22 @@
+{# templates/_components/sections/cafe_menu_section.twig #}
+{#
+    Variables:
+    - aos_delay: Delay for the main fade-right animation on the menu container
+    - left_column_data: Data for the left menu column (array of categories)
+    - right_column_data: Data for the right menu column (array of categories)
+#}
+<div class="sm:w-full md:w-1/2 gap-8 flex flex-col justify-center rounded pl-0 md:pl-16 relative mx-auto" data-aos="fade-right" data-aos-delay="{{ aos_delay }}" data-aos-once="true">
+    <h3 class="text-5xl font-bold text-[#3854CA] text-center md:text-left">Our Menu</h3>
+
+    {# MENU #}
+    <div class="border rounded flex overflow-scroll max-h-[80vh]" id="menu">
+        {% include '_components/ui/menu/menu_column.twig' with {
+            is_left_column: true,
+            categories: left_column_data
+        } %}
+        {% include '_components/ui/menu/menu_column.twig' with {
+            is_left_column: false,
+            categories: right_column_data
+        } %}
+    </div>
+</div>

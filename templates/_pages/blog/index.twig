@@ -1,0 +1,46 @@
+{% extends '_layouts/base.twig' %}
+
+{% block body %}
+
+	<section class="w-full min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-30">
+
+		<div id="video-overlay" class="absolute cursor-pointer w-full h-full bg-[rgba(0,0,0,0.1)] z-0"></div>
+
+
+		<div class="flex flex-col items-center justify-center max-w-[1000px]">
+
+			<h1 class="poppins-semibold text-center text-3xl md:text-5xl font-bold mb-8" data-aos="fade-down" data-aos-duration="500" data-aos-delay="200" data-aos-once="true">
+				Here's a look at what we've been up to at
+				<br/>
+				<span id="typewriter" class="text-blue-800"></span>
+			</h1>
+
+			{% set entries = craft.entries.section('blog').orderBy('postDate desc').limit(9) %}
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				{% for entry in entries %}
+					{% include '_components/card.twig' with { entry: entry, index: loop.index0 } %}
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+const text = "The Bridge Association.";
+let index = 0;
+const speed = 100; // typing speed in ms
+const typewriterElement = document.getElementById("typewriter");
+
+function typeWriter() {
+if (index < text.length) {
+typewriterElement.innerHTML += text.charAt(index);
+index++;
+setTimeout(typeWriter, speed);
+}
+}
+
+setTimeout(typeWriter, 500); // Start after 500ms
+});
+	</script>
+{% endblock %}

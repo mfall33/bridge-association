@@ -1,0 +1,125 @@
+{% extends '_layouts/base.twig' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
+{% endblock %}
+
+{% block body %}
+
+    {% include '_components/video_landing.twig' with { src: '/assets/videos/placeholder-1.mov' } %}
+
+    <section class="w-full flex flex-col justify-center relative overflow-hidden p-8 md:p-16 min-min-h-screen justify-center items-center sm:min-h-fit gap-y-16 md:gap-y-48">
+
+        {# Training at The Bridge #}
+        {% include '_components/sections/image_text_section.twig' with {
+            layout: 'img_right_text_left',
+            image_src: '/assets/images/quirky-emporium.png',
+            image_alt: 'Quirky Emporium',
+            title: 'Training at The Bridge',
+            text: 'Established in 1998, Bridge Association is a not-for-profit organisation providing vocational training for adults aged 18+ with learning disabilities. Based in a central, accessible location, we support trainees referred by Health and Social Care Trusts, SEN schools, and families. Our programme focuses on developing self-help, independent living, and practical, transferable skills, with trainees attending between 2–5 days a week. Over the years, Bridge has earned recognition for its impact, and continues to serve as a vital resource for connection, learning, and community across several Trust areas.',
+            image_aos_delay: '500',
+            text_aos_delay: '100',
+            extra_class: 'md:min-h-screen',
+        } %}
+
+        {# Placement Eligibility #}
+        {% include '_components/sections/image_text_section.twig' with {
+            layout: 'img_left_text_right',
+            image_src: '/assets/images/Landscape.jpg',
+            image_alt: 'Landscape',
+            title: 'Placement Eligibility',
+            text: 'The Bridge Training Unit accepts applications from individuals aged 18+ who have a diagnosed learning disability, as defined by current health and social care classifications. Applicants should be able to develop practical vocational skills with appropriate support, and be working towards certified course units. Those with additional or borderline learning disabilities may also be considered, provided referrals are made through the relevant Learning Disability social work team. Applicants must be able to manage their own personal care and medication, and should not present with serious or challenging behaviours.',
+            image_aos_delay: '800',
+            text_aos_delay: '400',
+            extra_class: 'md:min-h-screen',
+        } %}
+
+        {# Attendance and Access #}
+        {% include '_components/sections/image_text_section.twig' with {
+            layout: 'img_right_text_left',
+            image_src: '/assets/images/coast.jpeg',
+            image_alt: 'Coast',
+            title: 'Attendance and Access',
+            text: 'Trainees are encouraged to attend up to 5 days per week, depending on individual needs, with a minimum of 2 days recommended for the training to be effective. Applicants should have the potential to travel independently to the Unit or be able to benefit from travel training in the future. Support with transport can be arranged and discussed during the admissions process. Placements can be funded through Direct Payments or Self-Directed Support.',
+            image_aos_delay: '300',
+            text_aos_delay: '100',
+            extra_class: 'md:min-h-screen',
+        } %}
+
+        {# Training Programme Structure #}
+        {% include '_components/sections/image_text_section.twig' with {
+            layout: 'img_left_text_right',
+            image_src: '/assets/images/Landscape.jpg',
+            image_alt: 'Landscape',
+            title: 'Training Programme Structure',
+            text: 'New trainees begin with a 3-month introductory placement in one of three core areas: Catering & Housekeeping, Horticulture & Upcycling, or Retail, Recycling & Crafts. During this time, they also take part in Personal Development, IT, and Numeracy & Literacy sessions to assess their individual skills. At the end of this period, a review is held with the trainee, their family or carers, social workers, and other professionals to help determine the most suitable training path. Bridge staff provide guidance based on the trainee’s progress and potential. Training programmes are flexible and continually updated, ensuring each individual can grow socially, educationally, occupationally, and recreationally.',
+            image_aos_delay: '200',
+            text_aos_delay: '600',
+            extra_class: 'md:min-h-screen',
+        } %}
+
+        <div class="w-full max-w-[1600px] flex flex-col md:flex-row">
+            <div class="sm:w-full md:w-1/2 gap-16 pt-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-aos-once="true" data-aos-duration="1000">
+                <div class="flex flex-col gap-8">
+                    <h3 class="text-6xl text-[#3854CA] poppins-semibold">Building the Bridge</h3>
+                    <p class="open-sans-regular">The Bridge Association is a vital support for people with disabilities in the Antrim and Newtownabbey Borough and beyond. While its core focus is on training and vocational opportunities, it also plays a key role in helping service users build relationships and connect with their communities. To reach more people and enhance its impact, the organisation has identified the need for a new Training Unit and Community Facility.</p>
+                </div>
+
+                <div class="flex flex-col gap-4" data-aos-delay="300" data-aos-once="true" data-aos-duration="1000">
+                    <h3 class="text-4xl text-[#3854CA] poppins-semibold">Why is our project needed?</h3>
+                    <p class="open-sans-semibold">Bridge Association has outgrown its current premises, which are no longer fit for purpose:</p>
+                    <ul class="pl-8 open-sans-regular">
+                        <li class="list-disc">The building is too small, our canteen and staff room double as a classroom 50% of the time.</li>
+                        <li class="list-disc">It can only accommodate 1 wheelchair user at a time, but we need space for 4.</li>
+                        <li class="list-disc">We have a waiting list>Our lease, dating back to 1988, is now rolling monthly. The property has been sold and zoned for housing, so we cannot remain long-term.</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-4" data-aos-delay="900" data-aos-once="true" data-aos-duration="1000">
+                    <img src="/assets/images/training/expansion-plan.svg" class="w-full max-w-[650px] h-[300px] md:h-[450px] rounded-t-full" alt="Expansion Plan" width="80">
+                </div>
+            </div>
+            <div class="sm:w-full md:w-1/2 gap-16 flex flex-col rounded" data-aos="fade-up" data-aos-delay="200" data-aos-once="true" data-aos-duration="1000">
+
+                <div class="relative" data-aos-delay="400" data-aos-once="true" data-aos-duration="1000">
+                    <video class="w-full object-fill rounded-4xl">
+                        <source src="/assets/videos/placeholder-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <div class="flex items-center justify-center absolute rounded-full max-w-[120px] max-h-[120px] top-0 bottom-0 left-0 right-0 m-auto cursor-pointer hover:bg-[rgba(56,84,203)] transition-colors transition-transform duration-500 active:scale-95" data-aos="zoom-in" data-aos-delay="600" data-aos-once="true" data-aos-duration="1000">
+                        {% include '_components/svg/play' %}
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4" data-aos-delay="600" data-aos-once="true" data-aos-duration="1000">
+                    <h3 class="text-4xl text-[#3854CA] poppins-semibold">What Benefits Will Our Project Create?</h3>
+                    <p class="open-sans-semibold">Bridge Association has outgrown its current premises, which are no longer fit for purpose:</p>
+                    <ul class="pl-8">
+                        <li class="list-disc">Provide modern and fit for purpose facilities that reflect and meet the needs of people with learning Provide modern, accessible facilities that meet the needs of people with learning disabilities</li>
+                        <li class="list-disc">Secure a long-term, self-sustainable home for Bridge Association and the local community</li>
+                        <li class="list-disc">Increase trainee capacity from 32 to 50 per day</li>
+                        <li class="list-disc">Expand certified course offerings to meet current and future needs</li>
+                        <li class="list-disc">Create more work placement opportunities for trainees</li>
+                        <li class="list-disc">Offer affordable space for community activities and services</li>
+                        <li class="list-disc">Support the development of social enterprises for people with learning disabilities</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-4 items-center" data-aos="fade-in" data-aos-once="true" data-aos-duration="1000">
+                    <div class="w-full">
+                        {% include '_components/ui/rounded-image.twig' with { url: '/assets/images/quirky-emporium.png', alt: 'Logo', extra_class: 'w-full' } %}
+                    </div>
+
+                    <div class="w-full flex items-center justify-center" data-aos="-in" data-aos-once="true" data-aos-duration="1000">
+                        <button class="w-full px-10 py-4 bg-[#3854CA] text-white w-auto rounded-lg text-center font-semibold lato-bold cursor-pointer active:scale-95 transition-all flex items-center justify-center active:scale-95 text-lg ">
+                            Donate Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

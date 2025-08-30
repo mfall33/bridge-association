@@ -1,0 +1,12 @@
+<div class="w-1/2 h-full p-4 md:p-8 open-sans-regular {{ is_left_column ? 'border-r border-slate-100' : 'border-l border-slate-100' }}">
+    {% if is_left_column %}
+        <h5 class="text-sm poppins-semibold">Bridge Hug 'A' Mug Cafe Menu</h5>
+    {% endif %}
+
+    {% for category in categories %}
+        {% include '_components/ui/menu/menu_category.twig' with {
+            title: category.title,
+            items: category.items
+        } %}
+    {% endfor %}
+</div>

@@ -1,0 +1,9 @@
+<section class="flex flex-col gap-2 mt-8">
+    <h5 class="text-sm poppins-semibold">{{ title }}</h5>
+    {% for item in items %}
+        {% include '_components/ui/menu/menu_item.twig' with {
+            name: item.name,
+            price: item.price
+        } %}
+    {% endfor %}
+</section>

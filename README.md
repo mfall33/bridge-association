@@ -10,7 +10,6 @@ This is a [Craft CMS 5.x](https://github.com/craftcms/cms) starter [MadeByShape]
 - [DDEV](https://ddev.com) Local development environment
 - [Vite 5.x](https://vitejs.dev) Front end build tool with HMR
 - [Tailwind CSS 4.x](https://tailwindcss.com) Utility-first CSS framework
-- [Alpine.js 3.x](https://alpinejs.dev/) Minimal JS framework
 - [Mailgun](https://www.mailgun.com/) Email API
 - [Servd](https://servd.host) Craft CMS first hosting provider
 
@@ -49,8 +48,6 @@ This is a [Craft CMS 5.x](https://github.com/craftcms/cms) starter [MadeByShape]
 
 - Blitz
 - CKEditor
-- Formie
-- Imager X
 - Mailgun
 - Minify
 - SEOMatic

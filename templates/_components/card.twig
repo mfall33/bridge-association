@@ -1,0 +1,53 @@
+{% set blogImage = entry.images.one() %}
+
+<div 
+    class="bg-slate-100 rounded-lg overflow-hidden shadow-lg flex flex-col h-full group"
+    data-aos="zoom-in"
+    data-aos-duration="800"
+    data-aos-delay="{{ index * 100 }}"
+    data-aos-once="true"
+>
+    <div 
+        class="h-48 w-full bg-gray-300 border-b-2 border-slate-300 overflow-hidden"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        data-aos-delay="{{ index * 150 }}"
+        data-aos-once="true"
+    >
+        <a href="{{ entry.url }}" class="block h-full w-full">
+            <img 
+                src="{{ blogImage ? blogImage.getUrl() : siteUrl('web/assets/placeholder.webp') }}" 
+                class="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                alt="{{ entry.title }}"
+            />
+        </a>
+    </div>
+
+    <div class="p-6 flex flex-col flex-grow">
+        <h3 
+            class="lato-bold text-xl mb-2" 
+        >
+            <a href="{{ entry.url }}" class="hover:underline">{{ entry.title }}</a>
+        </h3>
+
+        {% if entry.summary %}
+            <p 
+                class="lato-regular mb-5"
+            >
+                {{ entry.summary }}
+            </p>
+        {% endif %}
+
+        {# Ensures button stays at the bottom #}
+        <div class="mt-auto">
+            <a href="{{ entry.url }}" class="inline-block">
+                <button class="px-5 py-2 bg-blue-700 text-white border border-blue-800 rounded-lg font-semibold lato-bold cursor-pointer active:scale-95 transition-all flex items-center hover:scale-95">
+                    Read More
+                    <i class="bi bi-arrow-right-circle-fill ml-3 text-2xl"></i>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+

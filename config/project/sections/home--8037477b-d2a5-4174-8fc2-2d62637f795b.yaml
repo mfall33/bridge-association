@@ -1,0 +1,30 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 9755366f-6d87-48af-aa16-a2c921387368 # HomePage
+  -
+    uid: 81c99547-d10c-4044-bba9-dca0094a6c1e # Blog
+handle: home
+maxAuthors: 1
+name: Home
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  08c386f4-5a41-4c9f-8282-f6785af06bfc: # bridge-association
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/home/index.twig
+    uriFormat: __home__
+type: single
