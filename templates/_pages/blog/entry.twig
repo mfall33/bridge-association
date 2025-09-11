@@ -9,12 +9,12 @@
 
 		<div class="w-full lex flex-col items-center justify-center max-w-[1000px]">
 
-			{% if image %}
+			{# {% if image %}
 				<img src="{{ image.getUrl() }}" class="w-full block rounded" alt="Blog"/>
-			{% endif %}
+			{% endif %} #}
 
 			<div class="gap-4 flex flex-col mt-4 md:mt-8">
-				{% include '_components/typography/section-title.twig' with { title: fullTitle, class: 'md:text-center' } %}
+				{# {% include '_components/typography/section-title.twig' with { title: fullTitle, class: 'md:text-center' } %}
 				<p class="open-sans-regular md:text-center font-light">
 					<b>Posted By:</b>
 					<i>{{ entry.author }}</i>
@@ -24,7 +24,7 @@
 						<b>Last Updated:</b>
 						<i>{{ entry.dateUpdated|date('F j, Y') }}</i>
 					</p>
-				{% endif %}
+				{% endif %} #}
 
 				<p class="open-sans-regular text-center">{{ entry.richTextSimple }}</p>
 				<a href="/blog" class="inline-block">
