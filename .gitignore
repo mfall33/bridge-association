@@ -51,7 +51,8 @@ cache/*
 
 # Asset Source Folders
 
-web/assets
+# web/assets
+# TMP for Demo
 public/assets
 public_html/assets
 httpdocs/assets
