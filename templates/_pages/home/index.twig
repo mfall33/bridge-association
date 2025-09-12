@@ -70,31 +70,31 @@
 		</div>
 	</section>
 
-<section class="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-[#3854CA] p-8 md:p-16 gap-8 md:gap-24">
-    {% for section in imageAndTextSections %}
-        <div class="w-full max-w-[1400px] flex flex-wrap gap-y-8">
+	<section class="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-[#3854CA] p-8 md:p-16 gap-8 md:gap-24">
+		{% for section in imageAndTextSections %}
+			<div class="w-full max-w-[1400px] flex flex-wrap gap-y-8">
 
-            {% if section.imagePlacement > 0 %}
-                {% include '_components/ui/rounded-image.twig' with { url: section.image.one().url, alt: 'Logo', class: 'w-full md:w-1/2' } %}
-            {% endif %}
-            
-            {% set paddingClass = section.imagePlacement <= 0 ? 'pr-10' : 'pl-10' %}
+				{% if section.imagePlacement > 0 %}
+					{% include '_components/ui/rounded-image.twig' with { url: section.image.one().url, alt: 'Logo', class: 'w-full md:w-1/2' } %}
+				{% endif %}
 
-            <div class="w-full md:w-1/2 flex items-center md:{{ paddingClass }} px-0" data-aos="fade-down" data-aos-once="true">
-                <div class="max-w-[500px] gap-4 flex flex-col justify-center">
-                    <h3 class="text-5xl font-bold text-white poppins-semibold">{{ section.title }}</h3>
-                    <h5 class="text-white text-xl font-medium mb-4 open-sans-regular">{{ section.subtitle }}</h5>
-                    <p class="text-white open-sans-regular">{{ section.paragraph }}</p>
-                </div>
-            </div>
+				{% set paddingClass = section.imagePlacement <= 0 ? 'pr-10' : 'pl-10' %}
 
-            {% if section.imagePlacement <= 0 %}
-                {% include '_components/ui/rounded-image.twig' with { url: section.image.one().url, alt: 'Logo', class: 'w-full md:w-1/2' } %}
-            {% endif %}
+				<div class="w-full md:w-1/2 flex items-center md:{{ paddingClass }} px-0" data-aos="fade-down" data-aos-once="true">
+					<div class="max-w-[500px] gap-4 flex flex-col justify-center">
+						<h3 class="text-5xl font-bold text-white poppins-semibold">{{ section.title }}</h3>
+						<h5 class="text-white text-xl font-medium mb-4 open-sans-regular">{{ section.subtitle }}</h5>
+						<p class="text-white open-sans-regular">{{ section.paragraph }}</p>
+					</div>
+				</div>
 
-        </div>
-    {% endfor %}
-</section>
+				{% if section.imagePlacement <= 0 %}
+					{% include '_components/ui/rounded-image.twig' with { url: section.image.one().url, alt: 'Logo', class: 'w-full md:w-1/2' } %}
+				{% endif %}
+
+			</div>
+		{% endfor %}
+	</section>
 
 	{% set iframeUrl = videoSection.iframeUrl %}
 	{% set textBlocks = videoSection.textArray.all() %}
@@ -111,18 +111,16 @@
 					{% for textItem in textBlocks %}
 						{% set fullText = textItem.text | default(textItem) %}
 						{% if fullText|length > 0 %}
-							<span>
-								<span class="text-[#3854CA]">{{ fullText|slice(0, 1) }}</span>
-								{{ fullText|slice(1) }}
-							</span>
+							<span class="text-[#3854CA]">{{ fullText|slice(0, 1) }}</span>
+							{{ fullText|slice(1) }}
 							{% if not loop.last %}
-								<span>, &nbsp;</span>
+								<span>, &nbsp;
+								</span>
 							{% endif %}
 						{% endif %}
 					{% endfor %}
 				</div>
 			</div>
-
 		</div>
 	</section>
 
@@ -160,7 +158,8 @@
 						{{ address.address.one().addressLine2 }},<br>
 						{{ address.address.one().locality }},<br>
 						{{ address.address.one().postalCode }}</p>
-					<div class="flex gap-8 mt-4">
+					<div
+						class="flex gap-8 mt-4">
 						{# {{ dump() }} #}
 						{% for link in socialLinks.socialContent.all() %}
 							{% set socialLink = link.socialLink %}
