@@ -1,12 +1,24 @@
 {% set currentSegment = craft.app.request.getSegment(1) %}
 
-{% set navItems = [
+{% set blogEntriesCount = craft.entries()
+    .section('blog')
+    .count()
+%}
+
+{% set navItemsBase = [
     { name: 'Training', slug: 'training', path: '/training' },
     { name: 'Community', slug: 'community', path: '/community' },
     { name: 'Quirky Emporium', slug: 'quirky-emporium', path: '/quirky-emporium' },
     { name: 'Hug a Mug', slug: 'hug-a-mug', path: '/hug-a-mug' },
-    { name: 'Blog', slug: '/blog', path: '/blog' },
 ] %}
+
+{# Conditionally add the Blog item only if the count is greater than 0 #}
+{% if blogEntriesCount > 0 %}
+    {% set navItemsBase = navItemsBase|merge([{ name: 'Blog', slug: 'blog', path: '/blog' }]) %}
+{% endif %}
+
+{# Set the final navItems variable to the potentially modified list #}
+{% set navItems = navItemsBase %}
 
 {% set fixed = fixed is defined ? fixed : true %}
 
@@ -35,8 +47,8 @@
 			</ul>
 
 			{# Mobile Burger Menu Button #}
-			<button id="burger-button" class="md:hidden text-white focus:outline-none z-50 cursor-pointer">
-				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<button id="burger-button" class="md:hidden text-white focus:outline-none z-50 cursor-pointer fixed top-10 right-8 active:scale-95 border-[#000] transition-transform border-2 rounded p-1">
+				<svg class="w-8 h-8" fill="#000000" stroke="#000000" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
 				</svg>
 			</button>
@@ -53,6 +65,13 @@
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
 			</svg>
 		</button>
+
+			<div data-aos="fade-in" class="absolute top-8 left-10">
+				<a class="relative group transition-all lato-regular" href="/">
+					<img src="/assets/images/bridge_association_logo.svg" alt="Bridge Association Logo" width="80">
+				</a>
+			</div>
+
 		<ul class="flex flex-col gap-8 text-center text-2xl text-[#3854CA] poppins-semibold">
 			{% for item in navItems %}
 				{% set slugInUrlSegment = currentSegment in item.slug %}

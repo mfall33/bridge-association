@@ -4,16 +4,13 @@ instructions: null
 name: 'Contact Number'
 searchable: false
 settings:
-  decimals: 0
-  defaultValue: null
-  max: null
-  min: 0
-  prefix: null
-  previewCurrency: null
-  previewFormat: none
-  size: null
-  step: null
-  suffix: null
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Number
+type: craft\fields\PlainText

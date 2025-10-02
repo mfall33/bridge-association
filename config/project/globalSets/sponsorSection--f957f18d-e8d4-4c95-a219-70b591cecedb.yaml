@@ -1,0 +1,29 @@
+fieldLayouts:
+  a3e7a432-f5e5-4fe4-8d9f-8deb69ceabf1:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-01T20:44:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5cbe08b7-b4bd-4a6b-be41-de9647b5eb19 # Images
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 89ff83f1-78a1-4d58-aa45-e7dc42db86ac
+            userCondition: null
+            warning: null
+            width: 100
+        name: sponsorSection
+        uid: 48f5d37d-d168-4be2-b227-26a1e3c0788f
+        userCondition: null
+handle: sponsorSection
+name: Sponsors
+sortOrder: 5

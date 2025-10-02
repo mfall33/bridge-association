@@ -9,8 +9,6 @@
 
 {% set quoteSection = entry.quoteSection.one() %}
 
-{% set sponsorSection = entry.sponsorsSection.all() %}
-
 {% set videoSection = entry.videoSection.one() %}
 
 {% set bridgeSectionTitle = bridgeSection.title %}
@@ -55,6 +53,29 @@
 		</div>
 	</section>
 
+ 	<section id="about" class="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden p-8 md:p-16 gap-8 md:gap-24 bg-[#3854CA]">
+
+	{% for section in imageAndTextSections %}
+        {% include '_components/sections/image_text_section.twig' with {
+                layout:  (section.imagePlacement > 0)
+                         ? 'img_left_text_right'
+                         : 'image_right_text_left',
+                image_src: section.image.one() ? section.image.one().url : null,
+                image_alt: 'About Us',
+                title: section.title,
+				subtext: section.subtitle,
+                text: section.paragraph,
+				title_class: 'text-[#ffffff]',
+				paragraph_class: 'text-[#ffffff]',
+                image_aos_delay: '500',
+                text_aos_delay: '100',
+                extra_class: 'md:min-h-[80vh]',
+
+        } %}
+    {% endfor %}
+	</section>
+
+
 	<section
 		class="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
 
@@ -70,7 +91,8 @@
 		</div>
 	</section>
 
-	<section class="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-[#3854CA] p-8 md:p-16 gap-8 md:gap-24">
+
+	<!-- <section class="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-[#3854CA] p-8 md:p-16 gap-8 md:gap-24">
 		{% for section in imageAndTextSections %}
 			<div class="w-full max-w-[1400px] flex flex-wrap gap-y-8">
 
@@ -80,7 +102,7 @@
 
 				{% set paddingClass = section.imagePlacement <= 0 ? 'pr-10' : 'pl-10' %}
 
-				<div class="w-full md:w-1/2 flex items-center md:{{ paddingClass }} px-0" data-aos="fade-down" data-aos-once="true">
+				<div class="w-full md:w-1/ flex items-center md:{{ paddingClass }} px-0" data-aos="fade-down" data-aos-once="true">
 					<div class="max-w-[500px] gap-4 flex flex-col justify-center">
 						<h3 class="text-5xl font-bold text-white poppins-semibold">{{ section.title }}</h3>
 						<h5 class="text-white text-xl font-medium mb-4 open-sans-regular">{{ section.subtitle }}</h5>
@@ -94,7 +116,7 @@
 
 			</div>
 		{% endfor %}
-	</section>
+	</section> -->
 
 	{% set iframeUrl = videoSection.iframeUrl %}
 	{% set textBlocks = videoSection.textArray.all() %}
@@ -107,19 +129,20 @@
 			{% endif %}
 
 			<div class="w-full">
-				<div class="flex flex-wrap justify-center w-full text-xl text-center poppins-semibold">
-					{% for textItem in textBlocks %}
-						{% set fullText = textItem.text | default(textItem) %}
-						{% if fullText|length > 0 %}
-							<span class="text-[#3854CA]">{{ fullText|slice(0, 1) }}</span>
-							{{ fullText|slice(1) }}
-							{% if not loop.last %}
-								<span>, &nbsp;
-								</span>
-							{% endif %}
-						{% endif %}
-					{% endfor %}
-				</div>
+			<div class="flex flex-wrap justify-center w-full text-xl text-center poppins-semibold">
+				{% for textItem in textBlocks %}
+					{% set fullText = textItem.text | default(textItem) %}
+					{% if fullText|length > 0 %}
+					<span class="whitespace-nowrap">
+						<span class="text-[#3854CA]">{{ fullText|slice(0, 1) }}</span>{{ fullText|slice(1) }}
+					</span>
+					{% if not loop.last %}
+						<span>,&nbsp;</span>
+					{% endif %}
+					{% endif %}
+				{% endfor %}
+</div>
+
 			</div>
 		</div>
 	</section>
@@ -134,51 +157,6 @@
 		</div>
 	</section>
 
-	<section class="w-full min-h-screen gap-16 md:gap-32 p-8 md:p-16 flex flex-col items-center justify-center bg-[#3854CA]">
-
-		<div data-aos="fade-in" data-aos-once="true">
-			<h3 class="text-4xl font-bold text-white text-center mb-8 poppins-semibold">Sponsored By</h3>
-			<div class="max-w-[1000px] w-full grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-				{% for image in sponsorSection %}
-					<img class="w-full h-24 object-contain" src="{{ image.getUrl() }}" alt="{{ image.title|default('Sponsor logo') }}" data-aos="fade-in" data-aos-delay="{{ loop.index * 200 }}" data-aos-once="true"/>
-				{% endfor %}
-			</div>
-		</div>
-
-
-		<div class="w-full max-w-[1000px] flex flex-wrap md:flex-nowrap items-center justify-center gap-8" data-aos="fade-in" data-aos-once="true">
-			<div class="w-full md:w-1/2 flex flex-col gap-4">
-				<div class="gap-4 flex flex-col">
-
-					<h5 class="text-4xl font-semibold text-white poppins-semibold">Find Us:</h5>
-					<p class="text-lg font-semibold text-white open-sans-regular">{{ contactNumber.contactNumber }}</p>
-					<p class="text-lg font-semibold text-white open-sans-regular">{{ contactEmail.contactEmail }}</p>
-					<p class="text-lg text-white open-sans-regular">{{ address.address.one().title }},<br>
-						<br>{{ address.address.one().addressLine1 }},<br>
-						{{ address.address.one().addressLine2 }},<br>
-						{{ address.address.one().locality }},<br>
-						{{ address.address.one().postalCode }}</p>
-					<div
-						class="flex gap-8 mt-4">
-						{# {{ dump() }} #}
-						{% for link in socialLinks.socialContent.all() %}
-							{% set socialLink = link.socialLink %}
-							{% set socialIcon = link.socialIcon.one() %}
-
-							{% if socialLink and socialIcon %}
-								<a href="{{ socialLink }}" target="_blank">
-									<img class="w-[50px]" src="{{ socialIcon.url }}" alt="{{ link.title|default('Social icon') }}"/>
-								</a>
-							{% endif %}
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-			<div class="w-full md:w-1/2">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2304.15935709846!2d-6.229829672708761!3d54.724411722720895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4861acbaa77ca205%3A0xc7ffb9b156ce1765!2sThe%20Bridge%20Association%20Ltd%20Bridge%20Training%20Unit!5e0!3m2!1sen!2suk!4v1757621153540!5m2!1sen!2suk" class="w-full rounded" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div>
-		</div>
-	</section>
 
 	<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 

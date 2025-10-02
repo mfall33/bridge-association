@@ -58,8 +58,8 @@
             extra_class: 'md:min-h-[80vh]',
         } %}
 
-        <div class="w-full max-w-[1600px] flex flex-col md:flex-row md:gap-0 gap-16">
-            <div class="sm:w-full md:w-1/2 gap-16 pt-8 pr-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-aos-once="true" data-aos-duration="1000">
+        <div class="w-full max-w-[1600px] flex flex-col justify-center md:flex-row md:gap-0 gap-16">
+            <div class="sm:w-full md:w-1/2 max-w-[600px] gap-16 pt-8 pr-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-aos-once="true" data-aos-duration="1000">
                 <div class="flex flex-col gap-8">
                     <h3 class="text-6xl text-[#3854CA] poppins-semibold">Building the Bridge</h3>
                     <p class="open-sans-regular">The Bridge Association is a vital support for people with disabilities in the Antrim and Newtownabbey Borough and beyond. While its core focus is on training and vocational opportunities, it also plays a key role in helping service users build relationships and connect with their communities. To reach more people and enhance its impact, the organisation has identified the need for a new Training Unit and Community Facility.</p>
@@ -71,7 +71,7 @@
                     <ul class="pl-8 open-sans-regular">
                         <li class="list-disc">The building is too small, our canteen and staff room double as a classroom 50% of the time.</li>
                         <li class="list-disc">It can only accommodate 1 wheelchair user at a time, but we need space for 4.</li>
-                        <li class="list-disc">We have a waiting list>Our lease, dating back to 1988, is now rolling monthly. The property has been sold and zoned for housing, so we cannot remain long-term.</li>
+                        <li class="list-disc">We have a waiting list, our lease dates back to 1988 and is now rolling monthly. The property has been sold and zoned for housing, so we cannot remain long-term.</li>
                     </ul>
                 </div>
 
@@ -79,17 +79,13 @@
                     <img src="/assets/images/bridge_training_unit_plan.svg" class="w-full max-w-[650px] h-[300px] md:h-[450px] rounded-t-full" alt="Expansion Plan" width="80">
                 </div>
             </div>
-            <div class="sm:w-full md:w-1/2 gap-16 flex flex-col rounded" data-aos="fade-up" data-aos-delay="200" data-aos-once="true" data-aos-duration="1000">
+            <div class="sm:w-full md:w-1/2 max-w-[600px] gap-16 flex flex-col rounded" data-aos="fade-up" data-aos-delay="200" data-aos-once="true" data-aos-duration="1000">
 
                 <div class="relative" data-aos-delay="400" data-aos-once="true" data-aos-duration="1000">
                     <video class="w-full object-fill rounded-4xl">
                         <source src="/assets/videos/placeholder-video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-
-                    <div class="flex items-center justify-center absolute rounded-full max-w-[120px] max-h-[120px] top-0 bottom-0 left-0 right-0 m-auto cursor-pointer hover:bg-[rgba(56,84,203)] transition-colors transition-transform duration-500 active:scale-95" data-aos="zoom-in" data-aos-delay="600" data-aos-once="true" data-aos-duration="1000">
-                        {% include '_components/svg/play' %}
-                    </div>
                 </div>
 
                 <div class="flex flex-col gap-4" data-aos-delay="600" data-aos-once="true" data-aos-duration="1000">
@@ -104,18 +100,6 @@
                         <li class="list-disc">Offer affordable space for community activities and services</li>
                         <li class="list-disc">Support the development of social enterprises for people with learning disabilities</li>
                     </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-4 items-center" data-aos="fade-in" data-aos-once="true" data-aos-duration="1000">
-                    <div class="w-full">
-                        {% include '_components/ui/rounded-image.twig' with { url: '/assets/images/bridge_team_3.png', alt: 'Logo', extra_class: 'w-full' } %}
-                    </div>
-
-                    <div class="w-full flex items-center" data-aos="-in" data-aos-once="true" data-aos-duration="1000">
-                        <button class="max-w-[200px] w-full px-10 py-4 bg-[#3854CA] text-white w-auto rounded-lg text-center font-semibold lato-bold cursor-pointer active:scale-95 transition-all flex items-center justify-center active:scale-95 text-lg ">
-                            Donate Now
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-dateModified: 1754858592
+dateModified: 1759437908
 email:
   fromEmail: $CRAFT_SYSTEM_EMAIL
   fromName: $CRAFT_SITE_NAME
@@ -93,6 +93,7 @@ meta:
     df3ef6aa-107e-40f0-82f4-de195ff3dfc0: 'Image Placement' # Image Placement
     e2a4e8c8-440e-4087-b7f4-ee93baa3ca0e: 'Video Content' # Video Content
     f3e544b8-88bf-4761-8df2-d767fa1502b7: Text # Text
+    f957f18d-e8d4-4c95-a219-70b591cecedb: Sponsors # Sponsors
     fb0420bb-0fbf-46d2-afd2-f7992c60c886: 'Contact Form' # Contact Form
 plugins:
   blitz:
