@@ -1,8 +1,8 @@
-<section class="w-full h-screen flex justify-center relative overflow-hidden">
+<section class="w-full min-h-[60vh] md:h-screen flex justify-center relative overflow-hidden">
 
     <div id="video-overlay" class="absolute w-full h-full bg-[rgba(0,0,0,0.3)] z-1"></div>
 
-    <video id="video" class="w-full object-fill" height="240" autoplay muted playsinline>
+    <video id="video" class="w-full object-fill" height="240" autoplay muted playsinline loop>
         <source src="{{ src }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>

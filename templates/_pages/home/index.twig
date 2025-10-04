@@ -77,14 +77,10 @@
 
 
 	<section
-		class="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
-
-		{# {{ dump(bridgeSectionSegments[0].summary) }} #}
+		class="w-full min-h-screen hidden md:flex items-center justify-center relative overflow-hidden">
 		<div class="w-full flex flex-col gap-8 max-w-[1400px]">
 			<h3 class="text-center text-4xl font-bold poppins-bold mb-10 text-[#3854CA]" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">{{ bridgeSectionTitle }}</h3>
-
 			{% include '_components/ui/bridge_link_icons.twig' with { bridgeSectionSegments: bridgeSectionSegments } %}
-
 			<div class="flex items-center items-end w-full">
 				{% include '_components/svg/bridge_sections.twig' with { bridgeSectionSegments: bridgeSectionSegments } %}
 			</div>
